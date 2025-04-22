@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class FamousQuotes {
     public static void main(String[] args) {
-        String[] Quotes = {
+        String[] quotes = {
                 "The only way to do great work is to love what you do",
                 "Whatever you do, do it well,",
                 "Life is what happens when you're busy making other plans",
@@ -19,18 +19,24 @@ public class FamousQuotes {
 
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose a number 1-10");
-        int number = scanner.nextInt();
+        while (true) {
+            System.out.println("\nChoose a number 1-10 to receive a quote");
 
-        if (number >=1 & number <=10) {
-            System.out.println("Quote " + number + ":" + Quotes[number - 1]);
-        } else {
-            System.out.println("Enter a number 1-10 to display a quote");
+            try {
+                int number = scanner.nextInt();
+
+                if (number >= 1 & number <= 10) {
+                    System.out.println("Quote " + number + ": " + quotes[number - 1]);
+                } else {
+                    System.out.println("Please enter a number between 1 and 10.");
+                }
+            } catch (Exception e) {
+                System.out.println("Enter a range 1-10 ONLY!");
+                scanner.nextLine();
+                scanner.close();
+            }
+
         }
-
-        System.out.println("Awesome choice!");
-        System.out.println("Run again to explore more quotes!");
-        scanner.close();
 
     }
 }
