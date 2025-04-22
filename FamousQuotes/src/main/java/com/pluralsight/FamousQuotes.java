@@ -20,7 +20,7 @@ public class FamousQuotes {
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("\nChoose a number 1-10 to receive a quote");
+            System.out.println("Choose a number 1-10 to receive a quote");
 
             try {
                 int number = scanner.nextInt();
@@ -28,7 +28,7 @@ public class FamousQuotes {
                 if (number >= 1 & number <= 10) {
                     System.out.println("Quote " + number + ": " + quotes[number - 1]);
                 } else {
-                    System.out.println("Please enter a number between 1 and 10.");
+                    System.out.println("Please enter a number between 1-10 ONLY!!!");
                 }
             } catch (Exception e) {
                 System.out.println("Enter a range 1-10 ONLY!");
