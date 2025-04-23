@@ -27,10 +27,10 @@ public class BedtimeStories {
             }
 
             scanner.close();
+            input.close();
         } catch (FileNotFoundException e) {
             System.out.println("Try again we do not carry that file");
         }
-
     }
 }
 
