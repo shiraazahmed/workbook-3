@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class BedtimeStories {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-
         System.out.println("Pick a story to read!");
         System.out.println("1. goldilocks.txt");
         System.out.println("2. hansel_and_gretel.txt");
@@ -33,7 +31,6 @@ public class BedtimeStories {
             System.out.println("Try again we do not carry that file");
         }
 
-        input.close();
     }
 }
 
