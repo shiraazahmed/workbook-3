@@ -1,39 +1,39 @@
 package com.pluralsight;
 
-import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class BedtimeStories {
     public static void main(String[] args) {
-        Scanner inputScanner = new Scanner(System.in);
-        System.out.println("Choose a story out of the options given");
-        System.out.println("goldilocks.txt");
-        System.out.println("hansel_and_gretel.txt");
-        System.out.println("mary_had_a_little_lamb.txt");
+        Scanner input = new Scanner(System.in);
 
-        String storyName = inputScanner.nextLine();
 
-        if (storyName.equals("goldilocks.txt") || storyName.equals("hansel_and_gretel.txt") || storyName.equals("mary_had_a_little_lamb.txt")) {
-            try {
-                File storyFile = new File(storyName);
-                Scanner fileScanner = new Scanner(storyFile);
+        System.out.println("Pick a story to read!");
+        System.out.println("1. goldilocks.txt");
+        System.out.println("2. hansel_and_gretel.txt");
+        System.out.println("3. mary_had_a_little_lamb.txt");
+        System.out.println("Enter the full file name to view ");
 
-                int lineNumber = 1;
-                while (fileScanner.hasNextLine()) {
-                    String line = fileScanner.nextLine();
-                    System.out.println(lineNumber + ": " + line);
-                    lineNumber++;
-                }
+        String story = input.nextLine();
 
-                fileScanner.close();
-            } catch (FileNotFoundException e) {
-                System.out.println("Sorry, the story file could not be found.");
+        try {
+            FileInputStream fis = new FileInputStream(story);
+            Scanner scanner = new Scanner(fis);
+
+            int storyLine = 1;
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(storyLine + ": " + line);
+                storyLine++;
             }
-        } else {
-            System.out.println("Invalid file name. Please choose a valid story.");
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Try again we do not carry that file");
         }
 
-        inputScanner.close();
+        input.close();
     }
 }
+
