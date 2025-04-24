@@ -4,8 +4,12 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/FamousQuotes/pom.xml" />
         <option value="$PROJECT_DIR$/BedtimeStories/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/pom.xml" />
+>>>>>>> d901af423a093a4b4c4de5caa78c263765ca1937
       </list>
     </option>
   </component>
