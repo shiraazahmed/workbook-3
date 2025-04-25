@@ -1,0 +1,18 @@
+package com.pluralsight;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.TimeZone;
+
+public class FormatDates {
+    public static void main(String[] args) {
+        LocalDateTime today = LocalDateTime.now();
+        System.out.println("Today Date and Time: " + today);
+
+        DateTimeFormatter fmt =
+                DateTimeFormatter.ofPattern("MM/dd/yyyy,");
+
+        String formattedDate = today.format(fmt);
+        System.out.println("Today Date is: " + formattedDate);
+    }
+}
